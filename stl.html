@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LMS for Training Companies | Sell, Deliver &amp; Scale — SimpliTrain</title>
+<meta name="description" content="SimpliTrain is the LMS built for training companies that sell courses. Multi-client portals, built-in TMS, SCORM/xAPI, AI authoring, flat-rate pricing. Book your free demo."/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy:        #0E1F45;
+    --navy-mid:    #163068;
+    --blue:        #1B6BB0;
+    --blue-light:  #2E87CC;
+    --cyan:        #27AECE;
+    --cyan-soft:   #5BC4DE;
+    --sky:         #E5F5FB;
+    --sky-deep:    #D0EAF7;
+    --white:       #FFFFFF;
+    --gray-100:    #F7FAFC;
+    --gray-200:    #EDF2F7;
+    --gray-300:    #CBD5E0;
+    --gray-500:    #718096;
+    --gray-700:    #4A5568;
+    --text-dark:   #0E1F45;
+    --text-body:   #374151;
+    --radius:      12px;
+    --radius-sm:   8px;
+    --shadow:      0 4px 24px rgba(14,31,69,.08);
+    --shadow-md:   0 8px 40px rgba(14,31,69,.13);
+    --transition:  .3s ease;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-body);
+    background: var(--white);
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* ── UTILITIES ─────────────────────────────────── */
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    background: rgba(39,174,206,.1);
+    border: 1px solid rgba(39,174,206,.25);
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.25;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--gray-700);
+    max-width: 620px;
+    margin-top: 12px;
+    line-height: 1.75;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--cyan);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    white-space: nowrap;
+  }
+  .btn-primary:hover {
+    background: var(--blue-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(39,174,206,.35);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid rgba(255,255,255,.45);
+    cursor: pointer;
+    transition: all var(--transition);
+    white-space: nowrap;
+  }
+  .btn-ghost:hover {
+    background: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,.7);
+  }
+
+  /* ── FADE-UP ANIMATION ─────────────────────────── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── STICKY NAV ────────────────────────────────── */
+  #nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 0 24px;
+    transition: background var(--transition), box-shadow var(--transition);
+  }
+  #nav.scrolled {
+    background: var(--white);
+    box-shadow: 0 2px 16px rgba(14,31,69,.1);
+  }
+  .nav-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo img { height: 38px; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    transition: color var(--transition);
+  }
+  #nav.scrolled .nav-links a { color: var(--text-dark); }
+  .nav-links a:hover { color: var(--cyan); }
+  #nav.scrolled .nav-links a:hover { color: var(--blue); }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .nav-signin {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,.8);
+    transition: color var(--transition);
+  }
+  #nav.scrolled .nav-signin { color: var(--gray-700); }
+  .nav-signin:hover { color: var(--white); }
+  #nav.scrolled .nav-signin:hover { color: var(--blue); }
+  .nav-cta {
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 9px 20px;
+    border-radius: var(--radius-sm);
+    background: var(--cyan);
+    color: var(--white);
+    transition: background var(--transition);
+  }
+  .nav-cta:hover { background: var(--blue-light); }
+
+  /* ── HERO ──────────────────────────────────────── */
+  #hero {
+    background: linear-gradient(155deg, var(--navy) 0%, var(--navy-mid) 60%, #1a4a7a 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 700px 500px at 20% 50%, rgba(39,174,206,.08) 0%, transparent 70%),
+      radial-gradient(ellipse 600px 400px at 80% 60%, rgba(27,107,176,.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  /* subtle grid */
+  #hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--cyan-soft);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero-h1 {
+    font-size: clamp(34px, 5.5vw, 60px);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.15;
+    max-width: 820px;
+    position: relative;
+  }
+  .hero-h1 span { color: var(--cyan); }
+  .hero-sub {
+    font-size: clamp(15px, 2vw, 18px);
+    color: rgba(255,255,255,.72);
+    max-width: 620px;
+    margin: 20px auto 0;
+    line-height: 1.75;
+    position: relative;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 36px;
+    position: relative;
+  }
+  .hero-trust {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    position: relative;
+  }
+  .hero-trust span {
+    font-size: 13px;
+    color: rgba(255,255,255,.55);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-trust span::before {
+    content: '·';
+    color: var(--cyan);
+    font-size: 20px;
+    line-height: 0;
+  }
+  .hero-trust span:first-child::before { display: none; }
+
+  .hero-mockup {
+    margin-top: 60px;
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+  }
+  .mockup-frame {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 16px;
+    padding: 16px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 30px 80px rgba(0,0,0,.3);
+  }
+  .mockup-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .mockup-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .mockup-dot:nth-child(1) { background: #FF5F56; }
+  .mockup-dot:nth-child(2) { background: #FFBD2E; }
+  .mockup-dot:nth-child(3) { background: #27C93F; }
+  .mockup-screen {
+    background: linear-gradient(135deg, #0d1b35 0%, #1a3260 100%);
+    border-radius: 10px;
+    padding: 28px;
+    min-height: 320px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 16px;
+  }
+  .mock-sidebar {
+    background: rgba(255,255,255,.04);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mock-sidebar-item {
+    background: rgba(255,255,255,.06);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 11px;
+    color: rgba(255,255,255,.6);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mock-sidebar-item.active {
+    background: rgba(39,174,206,.2);
+    color: var(--cyan-soft);
+    border-left: 2px solid var(--cyan);
+  }
+  .mock-sidebar-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor; flex-shrink: 0;
+  }
+  .mock-main { display: flex; flex-direction: column; gap: 14px; }
+  .mock-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .mock-stat {
+    background: rgba(255,255,255,.05);
+    border-radius: 8px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,.07);
+  }
+  .mock-stat-val {
+    font-size: 22px; font-weight: 700; color: var(--cyan-soft);
+  }
+  .mock-stat-label { font-size: 10px; color: rgba(255,255,255,.45); margin-top: 4px; }
+  .mock-table-area {
+    background: rgba(255,255,255,.04);
+    border-radius: 8px;
+    padding: 14px;
+    flex: 1;
+  }
+  .mock-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+  .mock-row:last-child { border-bottom: none; }
+  .mock-avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    flex-shrink: 0;
+  }
+  .mock-name { font-size: 11px; color: rgba(255,255,255,.65); flex: 1; }
+  .mock-badge {
+    font-size: 9px; padding: 3px 8px; border-radius: 100px;
+    background: rgba(39,174,206,.15); color: var(--cyan-soft);
+    border: 1px solid rgba(39,174,206,.25);
+  }
+
+  /* ── LOGO MARQUEE ──────────────────────────────── */
+  #marquee {
+    background: var(--gray-100);
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 28px 0;
+    overflow: hidden;
+  }
+  .marquee-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray-500);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .marquee-track { display: flex; gap: 60px; animation: scroll 30s linear infinite; }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee-item {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-300);
+    white-space: nowrap;
+    letter-spacing: .02em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .marquee-item span { color: var(--gray-300); }
+
+  /* ── BOLD STATEMENT ────────────────────────────── */
+  #statement {
+    background: var(--navy);
+    padding: 100px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #statement::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 800px 300px at 50% 50%, rgba(39,174,206,.07) 0%, transparent 70%);
+  }
+  .statement-text {
+    font-size: clamp(26px, 4.5vw, 48px);
+    font-weight: 700;
+    color: var(--white);
+    max-width: 880px;
+    margin: 0 auto;
+    line-height: 1.3;
+    position: relative;
+  }
+  .statement-text em {
+    font-style: normal;
+    color: var(--cyan);
+  }
+  .statement-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,.55);
+    margin-top: 16px;
+    position: relative;
+  }
+
+  /* ── FEATURES ──────────────────────────────────── */
+  #features {
+    padding: 100px 24px;
+    background: var(--white);
+  }
+  .features-intro { text-align: center; margin-bottom: 72px; }
+  .feature-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .feature-block:last-child { margin-bottom: 0; }
+  .feature-block.reverse .feature-copy { order: -1; }
+  .feature-visual {
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+  }
+  .feature-mock {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e3f0fb 100%);
+    border: 1px solid var(--sky-deep);
+    border-radius: var(--radius);
+    padding: 28px;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+  .feature-mock::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(39,174,206,.1) 0%, transparent 70%);
+  }
+  .fm-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .fm-title { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+  .fm-badge {
+    font-size: 10px; font-weight: 600; color: var(--cyan);
+    background: rgba(39,174,206,.1); border-radius: 100px;
+    padding: 3px 10px; border: 1px solid rgba(39,174,206,.2);
+  }
+  .fm-cards { display: flex; flex-direction: column; gap: 10px; }
+  .fm-card {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    border: 1px solid var(--gray-200);
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  .fm-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+  }
+  .fm-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 15px;
+  }
+  .fm-info { flex: 1; }
+  .fm-info-name { font-size: 12px; font-weight: 600; color: var(--text-dark); }
+  .fm-info-sub { font-size: 11px; color: var(--gray-500); }
+  .fm-info-bar {
+    margin-top: 6px;
+    height: 4px;
+    border-radius: 100px;
+    background: var(--gray-200);
+    overflow: hidden;
+  }
+  .fm-info-bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+  }
+  .fm-status {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #38d68a; flex-shrink: 0;
+  }
+
+  /* scheduling mock */
+  .fm-sched { display: flex; flex-direction: column; gap: 10px; }
+  .fm-sched-item {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    border-left: 3px solid var(--cyan);
+    border-top: 1px solid var(--gray-200);
+    border-right: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .fm-sched-item:nth-child(2) { border-left-color: var(--blue); }
+  .fm-sched-item:nth-child(3) { border-left-color: #38d68a; }
+  .fm-sched-title { font-size: 12px; font-weight: 600; color: var(--text-dark); }
+  .fm-sched-meta { font-size: 10.5px; color: var(--gray-500); margin-top: 2px; }
+  .fm-sched-tag {
+    font-size: 9.5px; font-weight: 600; padding: 3px 8px;
+    border-radius: 100px;
+  }
+  .tag-blue { background: rgba(27,107,176,.1); color: var(--blue); }
+  .tag-green { background: rgba(56,214,138,.1); color: #2aa86a; }
+
+  /* cert mock */
+  .fm-cert {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1.5px solid var(--sky-deep);
+    text-align: center;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .fm-cert::before {
+    content: '🎓';
+    font-size: 28px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .fm-cert-name { font-size: 13px; font-weight: 700; color: var(--text-dark); }
+  .fm-cert-sub { font-size: 10px; color: var(--gray-500); margin-top: 4px; }
+  .fm-cert-qr {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px; height: 42px;
+    background: var(--gray-100);
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 10px;
+    color: var(--gray-500);
+    border: 1px solid var(--gray-200);
+    font-weight: 600;
+  }
+
+  /* ai builder mock */
+  .fm-ai { display: flex; flex-direction: column; gap: 10px; }
+  .fm-ai-input {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    border: 1px solid var(--gray-200);
+    font-size: 12px; color: var(--gray-500);
+    display: flex; gap: 8px; align-items: center;
+  }
+  .fm-ai-prompt {
+    background: rgba(39,174,206,.05);
+    border: 1px solid rgba(39,174,206,.15);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font-size: 11.5px;
+    color: var(--text-dark);
+  }
+  .fm-ai-modules { display: flex; flex-direction: column; gap: 8px; }
+  .fm-ai-mod {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 11.5px; color: var(--text-dark);
+  }
+  .fm-ai-mod-num {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    color: var(--white); font-size: 10px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .fm-generating {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11px; color: var(--cyan);
+    font-weight: 500;
+  }
+  .spinner {
+    width: 14px; height: 14px;
+    border: 2px solid rgba(39,174,206,.2);
+    border-top-color: var(--cyan);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* feature copy */
+  .feature-copy {}
+  .feature-copy .tag { margin-bottom: 14px; }
+  .feature-copy h2 {
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .feature-copy p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .feature-checks { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+  .feature-check {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14px; color: var(--text-body);
+    font-weight: 500;
+  }
+  .check-icon {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(39,174,206,.15);
+    color: var(--cyan);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; flex-shrink: 0; margin-top: 2px;
+  }
+  .feature-stat {
+    background: var(--sky);
+    border: 1px solid var(--sky-deep);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--gray-700);
+    border-left: 3px solid var(--cyan);
+    margin-top: 8px;
+  }
+
+  /* ── METRICS ───────────────────────────────────── */
+  #metrics {
+    background: var(--navy);
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  #metrics::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 900px 300px at 50% 50%, rgba(39,174,206,.08) 0%, transparent 70%);
+  }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .metric-item {
+    text-align: center;
+    padding: 48px 32px;
+    position: relative;
+  }
+  .metric-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 25%; bottom: 25%; right: 0;
+    width: 1px;
+    background: rgba(255,255,255,.12);
+  }
+  .metric-num {
+    font-size: clamp(44px, 6vw, 64px);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+    background: linear-gradient(135deg, #fff 30%, var(--cyan-soft));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .metric-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,.55);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .metric-label strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255,255,255,.85);
+    margin-bottom: 4px;
+  }
+
+  /* ── TESTIMONIALS ──────────────────────────────── */
+  #testimonials {
+    background: var(--gray-100);
+    padding: 100px 24px;
+  }
+  .testimonials-intro { text-align: center; margin-bottom: 56px; }
+  .testi-featured {
+    background: var(--navy);
+    border-radius: var(--radius);
+    padding: 56px 64px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .testi-featured::before {
+    content: '"';
+    position: absolute;
+    top: -10px; left: 40px;
+    font-size: 200px;
+    color: rgba(39,174,206,.12);
+    font-family: Georgia, serif;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .testi-text {
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.6;
+    max-width: 800px;
+    position: relative;
+    margin-bottom: 28px;
+  }
+  .testi-author { display: flex; align-items: center; gap: 16px; }
+  .testi-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; color: var(--white);
+  }
+  .testi-name {
+    font-size: 14px; font-weight: 600; color: var(--white);
+  }
+  .testi-role {
+    font-size: 12.5px; color: rgba(255,255,255,.5); margin-top: 2px;
+  }
+  .testi-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .testi-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .testi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .testi-card-text {
+    font-size: 15px;
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .testi-card-text::before {
+    content: '"';
+    font-size: 60px;
+    color: var(--sky-deep);
+    font-family: Georgia, serif;
+    position: absolute;
+    top: -10px; left: -8px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .testi-card-text p { position: relative; }
+  .testi-card-author { display: flex; align-items: center; gap: 12px; }
+  .testi-card-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--cyan-soft), var(--blue));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; color: var(--white);
+  }
+  .testi-card-name { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+  .testi-card-role { font-size: 11.5px; color: var(--gray-500); }
+  .ratings-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 44px;
+  }
+  .rating-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 100px;
+    padding: 10px 20px;
+    box-shadow: var(--shadow);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  .stars { color: #F6C934; font-size: 13px; letter-spacing: 1px; }
+
+  /* ── COMPARISON ────────────────────────────────── */
+  #comparison {
+    background: var(--white);
+    padding: 100px 24px;
+  }
+  .comparison-intro { text-align: center; margin-bottom: 56px; }
+  .comparison-intro .section-sub { margin: 12px auto 0; }
+
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .comp-table th {
+    padding: 20px 24px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .comp-table th:first-child {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    width: 34%;
+  }
+  .comp-table th:nth-child(2) {
+    background: var(--gray-200);
+    color: var(--gray-700);
+    width: 33%;
+    text-align: center;
+  }
+  .comp-table th:nth-child(3) {
+    background: var(--navy);
+    color: var(--white);
+    width: 33%;
+    text-align: center;
+  }
+  .comp-table th:nth-child(3) span {
+    background: var(--cyan);
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+  }
+  .comp-table td {
+    padding: 16px 24px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .comp-table td:first-child {
+    font-weight: 600;
+    color: var(--text-dark);
+    background: var(--gray-100);
+  }
+  .comp-table td:nth-child(2) {
+    color: var(--gray-500);
+    text-align: center;
+    background: #FAFAFA;
+  }
+  .comp-table td:nth-child(3) {
+    color: var(--navy);
+    font-weight: 500;
+    text-align: center;
+    background: rgba(39,174,206,.04);
+    border-left: 2px solid rgba(39,174,206,.2);
+  }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-table tr:hover td:first-child { background: var(--gray-200); }
+  .comp-x { color: #E53E3E; font-size: 16px; }
+  .comp-check { color: var(--cyan); font-size: 16px; }
+
+  /* ── PRICING ───────────────────────────────────── */
+  #pricing {
+    background: var(--gray-100);
+    padding: 100px 24px;
+  }
+  .pricing-intro { text-align: center; margin-bottom: 56px; }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .pricing-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), box-shadow var(--transition);
+    position: relative;
+  }
+  .pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+  .pricing-card.featured {
+    border-color: var(--cyan);
+    border-width: 2px;
+    background: var(--white);
+    transform: scale(1.03);
+  }
+  .pricing-card.featured:hover {
+    transform: scale(1.03) translateY(-6px);
+  }
+  .pricing-popular {
+    position: absolute;
+    top: -13px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--cyan);
+    color: var(--white);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 4px 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .pricing-tier {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 8px;
+  }
+  .pricing-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+  }
+  .pricing-desc {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-bottom: 20px;
+  }
+  .pricing-price {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+  .pricing-price span { font-size: 15px; font-weight: 500; color: var(--gray-500); }
+  .pricing-divider {
+    height: 1px;
+    background: var(--gray-200);
+    margin: 20px 0;
+  }
+  .pricing-features { display: flex; flex-direction: column; gap: 10px; flex: 1; margin-bottom: 28px; }
+  .pricing-feature {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 13.5px; color: var(--text-body);
+  }
+  .pricing-feature-icon {
+    color: var(--cyan); font-size: 13px; flex-shrink: 0; margin-top: 2px;
+  }
+  .pricing-cta {
+    display: block;
+    text-align: center;
+    padding: 13px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    transition: all var(--transition);
+    background: var(--sky);
+    color: var(--blue);
+    border: 1.5px solid var(--sky-deep);
+  }
+  .pricing-cta:hover {
+    background: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+  }
+  .pricing-card.featured .pricing-cta {
+    background: var(--cyan);
+    color: var(--white);
+    border-color: var(--cyan);
+  }
+  .pricing-card.featured .pricing-cta:hover {
+    background: var(--blue-light);
+    border-color: var(--blue-light);
+  }
+  .pricing-note {
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--gray-500);
+    margin-top: 32px;
+  }
+
+  /* ── FAQ ───────────────────────────────────────── */
+  #faq {
+    background: var(--white);
+    padding: 100px 24px;
+  }
+  .faq-intro { text-align: center; margin-bottom: 56px; }
+  .faq-list { max-width: 760px; margin: 0 auto; }
+  .faq-item {
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: color var(--transition);
+  }
+  .faq-q:hover { color: var(--blue); }
+  .faq-icon {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--sky);
+    border: 1px solid var(--sky-deep);
+    color: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .faq-item.open .faq-icon {
+    background: var(--cyan);
+    color: var(--white);
+    transform: rotate(45deg);
+  }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+  }
+  .faq-a-inner {
+    padding: 0 0 20px;
+    font-size: 14.5px;
+    color: var(--gray-700);
+    line-height: 1.8;
+  }
+
+  /* ── FINAL CTA ─────────────────────────────────── */
+  #final-cta {
+    background: linear-gradient(155deg, var(--navy) 0%, var(--navy-mid) 60%, #1a4a7a 100%);
+    padding: 110px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 700px 400px at 30% 60%, rgba(39,174,206,.07) 0%, transparent 70%),
+      radial-gradient(ellipse 500px 300px at 75% 40%, rgba(27,107,176,.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #final-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .cta-headline {
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 800;
+    color: var(--white);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.2;
+    position: relative;
+  }
+  .cta-headline span { color: var(--cyan); }
+  .cta-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,.6);
+    margin: 16px auto 0;
+    max-width: 520px;
+    position: relative;
+  }
+  .cta-btns {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    position: relative;
+  }
+  .cta-note {
+    font-size: 13px;
+    color: rgba(255,255,255,.4);
+    margin-top: 18px;
+    position: relative;
+  }
+
+  /* ── FOOTER ────────────────────────────────────── */
+  footer {
+    background: #070F22;
+    padding: 56px 24px 32px;
+    color: rgba(255,255,255,.45);
+  }
+  .footer-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .footer-brand p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 14px;
+  }
+  .footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .footer-col-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+    margin-bottom: 16px;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 13.5px;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 10px;
+    transition: color var(--transition);
+  }
+  .footer-col a:hover { color: var(--cyan); }
+  .footer-bottom {
+    max-width: 1160px;
+    margin: 24px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12.5px;
+  }
+  .footer-logo-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .footer-logo-text span { color: var(--cyan); }
+
+  /* ── RESPONSIVE ────────────────────────────────── */
+  @media (max-width: 900px) {
+    .feature-block { grid-template-columns: 1fr; gap: 32px; }
+    .feature-block.reverse .feature-copy { order: 0; }
+    .metrics-grid { grid-template-columns: 1fr; }
+    .metric-item:not(:last-child)::after { display: none; }
+    .metric-item { padding: 32px 24px; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .metric-item:last-child { border-bottom: none; }
+    .testi-cards { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+    .pricing-card.featured { transform: none; }
+    .pricing-card.featured:hover { transform: translateY(-6px); }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .footer-links-grid { grid-template-columns: repeat(2, 1fr); }
+    .mockup-screen { grid-template-columns: 1fr; }
+    .mock-sidebar { display: none; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .nav-signin { display: none; }
+    .testi-featured { padding: 40px 28px; }
+    .comp-table { font-size: 12px; }
+    .comp-table td, .comp-table th { padding: 12px 14px; }
+    .footer-links-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── STICKY NAV ─────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="footer-logo-text" style="font-size:19px;margin-top:0;">Simpli<span>Train</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#features">Product</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#comparison">Industries</a>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-signin">Sign In</a>
+      <a href="#final-cta" class="nav-cta">Book a Free Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────── -->
+<section id="hero">
+  <p class="hero-eyebrow fade-up" style="transition-delay:0ms">For Companies That Sell Training for a Living</p>
+  <h1 class="hero-h1 fade-up" style="transition-delay:100ms">
+    The LMS for Training Companies<br><span>That Sell Training.</span>
+  </h1>
+  <p class="hero-sub fade-up" style="transition-delay:220ms">
+    Multi-client portals, built-in training scheduler, AI course builder, and flat-rate pricing in one platform.
+  </p>
+  <div class="hero-ctas fade-up" style="transition-delay:340ms">
+    <a href="#final-cta" class="btn-primary">Book a Free Demo</a>
+    <a href="#features" class="btn-ghost">See It In Action &nbsp;→</a>
+  </div>
+  <div class="hero-trust fade-up" style="transition-delay:440ms">
+    <span>No per-learner fees</span>
+    <span>No long-term contracts</span>
+    <span>Live in 2 weeks</span>
+  </div>
+
+  <!-- PRODUCT MOCKUP -->
+  <div class="hero-mockup fade-up" style="transition-delay:560ms">
+    <div class="mockup-frame">
+      <div class="mockup-bar">
+        <div class="mockup-dot"></div>
+        <div class="mockup-dot"></div>
+        <div class="mockup-dot"></div>
+      </div>
+      <div class="mockup-screen">
+        <div class="mock-sidebar">
+          <div class="mock-sidebar-item active"><div class="mock-sidebar-dot"></div>Dashboard</div>
+          <div class="mock-sidebar-item"><div class="mock-sidebar-dot"></div>Client Portals</div>
+          <div class="mock-sidebar-item"><div class="mock-sidebar-dot"></div>Training Calendar</div>
+          <div class="mock-sidebar-item"><div class="mock-sidebar-dot"></div>Certificates</div>
+          <div class="mock-sidebar-item"><div class="mock-sidebar-dot"></div>Course Builder</div>
+          <div class="mock-sidebar-item"><div class="mock-sidebar-dot"></div>Analytics</div>
+        </div>
+        <div class="mock-main">
+          <div class="mock-stat-row">
+            <div class="mock-stat">
+              <div class="mock-stat-val">2,840</div>
+              <div class="mock-stat-label">Active Learners</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-val">48</div>
+              <div class="mock-stat-label">Client Portals</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-val">312</div>
+              <div class="mock-stat-label">Certs Issued</div>
+            </div>
+          </div>
+          <div class="mock-table-area">
+            <div class="mock-row">
+              <div class="mock-avatar"></div>
+              <div class="mock-name">Acme Corp Training</div>
+              <div class="mock-badge">Active</div>
+            </div>
+            <div class="mock-row">
+              <div class="mock-avatar" style="background:linear-gradient(135deg,#27AECE,#1B6BB0)"></div>
+              <div class="mock-name">HealthFirst Academy</div>
+              <div class="mock-badge">Active</div>
+            </div>
+            <div class="mock-row">
+              <div class="mock-avatar" style="background:linear-gradient(135deg,#38d68a,#1B6BB0)"></div>
+              <div class="mock-name">SafetyPro Institute</div>
+              <div class="mock-badge">Active</div>
+            </div>
+            <div class="mock-row">
+              <div class="mock-avatar" style="background:linear-gradient(135deg,#1B6BB0,#0E1F45)"></div>
+              <div class="mock-name">SkyHigh Aviation</div>
+              <div class="mock-badge">Active</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOGO MARQUEE ────────────────────────────────── -->
+<section id="marquee">
+  <p class="marquee-label">Trusted by training companies in</p>
+  <div style="overflow:hidden;">
+    <div class="marquee-track">
+      <div class="marquee-item">🖥 IT Certification</div>
+      <div class="marquee-item">🏥 Healthcare Compliance</div>
+      <div class="marquee-item">✈ Aviation Training</div>
+      <div class="marquee-item">💼 Finance & Banking</div>
+      <div class="marquee-item">🦺 Safety &amp; OSHA</div>
+      <div class="marquee-item">📊 Sales Training</div>
+      <div class="marquee-item">🏢 Corporate L&amp;D</div>
+      <div class="marquee-item">🔬 Life Sciences</div>
+      <!-- duplicate for infinite loop -->
+      <div class="marquee-item">🖥 IT Certification</div>
+      <div class="marquee-item">🏥 Healthcare Compliance</div>
+      <div class="marquee-item">✈ Aviation Training</div>
+      <div class="marquee-item">💼 Finance &amp; Banking</div>
+      <div class="marquee-item">🦺 Safety &amp; OSHA</div>
+      <div class="marquee-item">📊 Sales Training</div>
+      <div class="marquee-item">🏢 Corporate L&amp;D</div>
+      <div class="marquee-item">🔬 Life Sciences</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOLD STATEMENT ──────────────────────────────── -->
+<section id="statement">
+  <div class="container-sm">
+    <p class="statement-text fade-up">
+      Your training business doesn't have an effort problem.<br>
+      It has a <em>platform problem.</em><br>
+      And it has a very specific solution.
+    </p>
+    <p class="statement-sub fade-up" style="transition-delay:150ms;">SimpliTrain was purpose-built for the commercial training industry.</p>
+  </div>
+</section>
+
+<!-- ── FEATURES ────────────────────────────────────── -->
+<section id="features">
+  <div class="container">
+    <div class="features-intro fade-up">
+      <span class="tag">The Platform</span>
+      <h2 class="section-title">Everything a Training Company Needs.</h2>
+      <p class="section-sub" style="margin:12px auto 0;">Built specifically for organizations that sell, deliver, and scale training to paying clients.</p>
+    </div>
+
+    <!-- Feature 1: Multi-client portals -->
+    <div class="feature-block fade-up">
+      <div class="feature-visual">
+        <div class="feature-mock">
+          <div class="fm-header">
+            <span class="fm-title">Client Portals</span>
+            <span class="fm-badge">48 Active</span>
+          </div>
+          <div class="fm-cards">
+            <div class="fm-card">
+              <div class="fm-icon">🏢</div>
+              <div class="fm-info">
+                <div class="fm-info-name">Acme Corp Academy</div>
+                <div class="fm-info-sub">acme.learn.io · 240 learners</div>
+                <div class="fm-info-bar"><div class="fm-info-bar-fill" style="width:78%"></div></div>
+              </div>
+              <div class="fm-status"></div>
+            </div>
+            <div class="fm-card">
+              <div class="fm-icon">🏥</div>
+              <div class="fm-info">
+                <div class="fm-info-name">HealthFirst Training</div>
+                <div class="fm-info-sub">healthfirst.learn.io · 580 learners</div>
+                <div class="fm-info-bar"><div class="fm-info-bar-fill" style="width:91%"></div></div>
+              </div>
+              <div class="fm-status"></div>
+            </div>
+            <div class="fm-card">
+              <div class="fm-icon">✈</div>
+              <div class="fm-info">
+                <div class="fm-info-name">SkyHigh Aviation</div>
+                <div class="fm-info-sub">skyhigh.learn.io · 130 learners</div>
+                <div class="fm-info-bar"><div class="fm-info-bar-fill" style="width:55%"></div></div>
+              </div>
+              <div class="fm-status"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-copy">
+        <span class="tag">Multi-tenant</span>
+        <h2>Every client, their own branded portal.</h2>
+        <p>Stop managing 30 clients through 30 manual workarounds. SimpliTrain gives each client a fully branded portal — their logo, their domain, their learner dashboard.</p>
+        <div class="feature-checks">
+          <div class="feature-check"><div class="check-icon">✓</div>Set up in under 1 hour</div>
+          <div class="feature-check"><div class="check-icon">✓</div>Unlimited client tenants</div>
+          <div class="feature-check"><div class="check-icon">✓</div>One admin login for everything</div>
+        </div>
+        <div class="feature-stat">Training companies with 10+ clients save an average of 15–20 hours per week.</div>
+      </div>
+    </div>
+
+    <!-- Feature 2: Scheduling (reversed) -->
+    <div class="feature-block reverse fade-up">
+      <div class="feature-copy">
+        <span class="tag">Built-in TMS</span>
+        <h2>Schedule every class, instructor, and venue.</h2>
+        <p>SimpliTrain's built-in Training Management System handles ILT, vILT, venue booking, waitlists, and automated reminders — without a spreadsheet in sight.</p>
+        <div class="feature-checks">
+          <div class="feature-check"><div class="check-icon">✓</div>Instructor availability &amp; assignment</div>
+          <div class="feature-check"><div class="check-icon">✓</div>Waitlist &amp; attendance management</div>
+          <div class="feature-check"><div class="check-icon">✓</div>Automated learner reminders</div>
+        </div>
+        <div class="feature-stat">62% of training is outsourced partly because scheduling tools don't exist inside the LMS. (Training Mag, 2025)</div>
+      </div>
+      <div class="feature-visual">
+        <div class="feature-mock">
+          <div class="fm-header">
+            <span class="fm-title">Training Schedule</span>
+            <span class="fm-badge">This Week</span>
+          </div>
+          <div class="fm-sched">
+            <div class="fm-sched-item">
+              <div>
+                <div class="fm-sched-title">OSHA 30 — Cohort 4</div>
+                <div class="fm-sched-meta">Mon 9 Jun · 09:00 · Room A · Sarah Mitchell</div>
+              </div>
+              <span class="fm-sched-tag tag-blue">ILT</span>
+            </div>
+            <div class="fm-sched-item">
+              <div>
+                <div class="fm-sched-title">HIPAA Essentials</div>
+                <div class="fm-sched-meta">Tue 10 Jun · 14:00 · Zoom · Dr. Ray Chen</div>
+              </div>
+              <span class="fm-sched-tag tag-green">vILT</span>
+            </div>
+            <div class="fm-sched-item">
+              <div>
+                <div class="fm-sched-title">FAA Part 107 Refresher</div>
+                <div class="fm-sched-meta">Thu 12 Jun · 10:00 · Bay 2 · James Lowe</div>
+              </div>
+              <span class="fm-sched-tag tag-blue">ILT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 3: Certificates -->
+    <div class="feature-block fade-up">
+      <div class="feature-visual">
+        <div class="feature-mock">
+          <div class="fm-header">
+            <span class="fm-title">Certificate Management</span>
+            <span class="fm-badge">Auto-issue</span>
+          </div>
+          <div class="fm-cert">
+            <div class="fm-cert-name">HIPAA Compliance Certification</div>
+            <div class="fm-cert-sub">Issued: June 9, 2025 · Expires: June 9, 2026</div>
+            <div class="fm-cert-qr">QR</div>
+          </div>
+          <div class="fm-cards">
+            <div class="fm-card">
+              <div class="fm-icon" style="background:linear-gradient(135deg,#38d68a,#1B9960)">🔔</div>
+              <div class="fm-info">
+                <div class="fm-info-name">60-day expiry reminder sent</div>
+                <div class="fm-info-sub">24 learners notified automatically</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-copy">
+        <span class="tag">Certificate Automation</span>
+        <h2>Certificates issue the moment a learner passes.</h2>
+        <p>Branded, QR-verified, and expiry-tracked. Your team never manually emails a PDF again. Renewal reminders fire automatically — 60, 30, and 7 days before expiry.</p>
+        <div class="feature-checks">
+          <div class="feature-check"><div class="check-icon">✓</div>OSHA · HIPAA · CEU · STCW · FAA ready</div>
+          <div class="feature-check"><div class="check-icon">✓</div>Custom branding per client</div>
+          <div class="feature-check"><div class="check-icon">✓</div>AI proctoring built in</div>
+        </div>
+        <div class="feature-stat">Certificate issuance requires manual intervention in 80%+ of non-specialized LMS setups.</div>
+      </div>
+    </div>
+
+    <!-- Feature 4: AI Authoring (reversed) -->
+    <div class="feature-block reverse fade-up">
+      <div class="feature-copy">
+        <span class="tag">AI Course Builder</span>
+        <h2>Build a full course in under 2 hours.</h2>
+        <p>SimpliTrain's AI authoring turns subject matter expert notes into a structured, SCORM-ready course. Publish to any client portal in minutes.</p>
+        <div class="feature-checks">
+          <div class="feature-check"><div class="check-icon">✓</div>SCORM 1.2 · xAPI (Tin Can) · cmi5</div>
+          <div class="feature-check"><div class="check-icon">✓</div>AI item banking + assessment generation</div>
+          <div class="feature-check"><div class="check-icon">✓</div>No instructional design degree required</div>
+        </div>
+        <div class="feature-stat">37% of LMS tools now claim AI — none built specifically for commercial course production.</div>
+      </div>
+      <div class="feature-visual">
+        <div class="feature-mock">
+          <div class="fm-header">
+            <span class="fm-title">AI Course Builder</span>
+            <span class="fm-badge">SCORM Ready</span>
+          </div>
+          <div class="fm-ai">
+            <div class="fm-ai-input">
+              ✏️ &nbsp;<span>Paste your SME notes here...</span>
+            </div>
+            <div class="fm-ai-prompt">
+              "Generate a 4-module HIPAA Compliance course with assessments, based on the notes above."
+            </div>
+            <div class="fm-generating">
+              <div class="spinner"></div> Generating course structure...
+            </div>
+            <div class="fm-ai-modules">
+              <div class="fm-ai-mod"><div class="fm-ai-mod-num">1</div>Introduction to HIPAA</div>
+              <div class="fm-ai-mod"><div class="fm-ai-mod-num">2</div>Protected Health Information (PHI)</div>
+              <div class="fm-ai-mod"><div class="fm-ai-mod-num">3</div>Patient Rights &amp; Disclosures</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── METRICS ──────────────────────────────────────── -->
+<section id="metrics">
+  <div class="metrics-grid">
+    <div class="metric-item fade-up" style="transition-delay:0ms">
+      <div class="metric-num" data-target="40" data-suffix="%">0%</div>
+      <div class="metric-label">
+        <strong>Less admin time per client</strong>
+        vs. non-specialized LMS tools
+      </div>
+    </div>
+    <div class="metric-item fade-up" style="transition-delay:150ms">
+      <div class="metric-num" data-target="25" data-suffix="%">0%</div>
+      <div class="metric-label">
+        <strong>Cost savings in year one</strong>
+        by consolidating LMS + TMS + LXP
+      </div>
+    </div>
+    <div class="metric-item fade-up" style="transition-delay:300ms">
+      <div class="metric-num" data-target="2" data-prefix="<" data-suffix=" wks">0</div>
+      <div class="metric-label">
+        <strong>Average go-live time</strong>
+        including content migration
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ─────────────────────────────────── -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials-intro fade-up">
+      <span class="tag">What Training Companies Say</span>
+      <h2 class="section-title">Trusted by the teams who train for a living.</h2>
+    </div>
+
+    <div class="testi-featured fade-up">
+      <p class="testi-text">
+        "We were spending 3 days setting up every new client. With SimpliTrain, our first portal goes live in the same call we close the deal. That is not an exaggeration."
+      </p>
+      <div class="testi-author">
+        <div class="testi-avatar">👤</div>
+        <div>
+          <div class="testi-name">Head of Training Operations</div>
+          <div class="testi-role">IT Certification Company &nbsp;·&nbsp; Replace with real client quote</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-cards fade-up">
+      <div class="testi-card">
+        <div class="testi-card-text">
+          <p>"We chased certificate expiries in a spreadsheet every quarter. SimpliTrain eliminated that completely. It renews automatically."</p>
+        </div>
+        <div class="testi-card-author">
+          <div class="testi-card-avatar">👤</div>
+          <div>
+            <div class="testi-card-name">Director of Learning</div>
+            <div class="testi-card-role">Healthcare Compliance Training</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-card-text">
+          <p>"45 franchise locations, one dashboard. Every learner, every certificate, every location — visible in one place."</p>
+        </div>
+        <div class="testi-card-author">
+          <div class="testi-card-avatar">👤</div>
+          <div>
+            <div class="testi-card-name">VP of Training</div>
+            <div class="testi-card-role">National Sales Training Franchise</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ratings-row fade-up">
+      <div class="rating-badge">
+        <span class="stars">★★★★★</span>
+        <span>G2 &nbsp;·&nbsp; 4.5 Stars</span>
+      </div>
+      <div class="rating-badge">
+        <span class="stars">★★★★★</span>
+        <span>Capterra &nbsp;·&nbsp; 4.5 Stars</span>
+      </div>
+      <div class="rating-badge">
+        <span class="stars">★★★★★</span>
+        <span>Software Advice</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPARISON ───────────────────────────────────── -->
+<section id="comparison">
+  <div class="container">
+    <div class="comparison-intro fade-up">
+      <span class="tag">See the Difference</span>
+      <h2 class="section-title">Two Kinds of LMS. Only One Built for Selling Training.</h2>
+      <p class="section-sub">Standard training platforms were built for managing internal employees — not for running a commercial training business with dozens of clients.</p>
+    </div>
+    <div class="fade-up" style="overflow-x:auto;">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>What You Need</th>
+            <th>Generic / Off-the-shelf LMS</th>
+            <th><span>✅ SimpliTrain</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pricing model</td>
+            <td><span class="comp-x">✗</span>&nbsp; Per learner — costs rise with every client</td>
+            <td><span class="comp-check">✓</span>&nbsp; Flat-rate per admin — scale freely</td>
+          </tr>
+          <tr>
+            <td>Client portals</td>
+            <td><span class="comp-x">✗</span>&nbsp; One organisation only</td>
+            <td><span class="comp-check">✓</span>&nbsp; Unlimited branded client portals</td>
+          </tr>
+          <tr>
+            <td>Training scheduler</td>
+            <td><span class="comp-x">✗</span>&nbsp; Not included — separate tool needed</td>
+            <td><span class="comp-check">✓</span>&nbsp; Full ILT + vILT TMS built in</td>
+          </tr>
+          <tr>
+            <td>Course storefront</td>
+            <td><span class="comp-x">✗</span>&nbsp; No public catalog, no eCommerce</td>
+            <td><span class="comp-check">✓</span>&nbsp; Public catalog + payments native</td>
+          </tr>
+          <tr>
+            <td>Certificate management</td>
+            <td><span class="comp-x">✗</span>&nbsp; Manual PDF process</td>
+            <td><span class="comp-check">✓</span>&nbsp; Auto-issue, verified, expiry-tracked</td>
+          </tr>
+          <tr>
+            <td>Implementation</td>
+            <td><span class="comp-x">✗</span>&nbsp; 6–12 weeks average</td>
+            <td><span class="comp-check">✓</span>&nbsp; Live in under 2 weeks</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ──────────────────────────────────────── -->
+<section id="pricing">
+  <div class="container">
+    <div class="pricing-intro fade-up">
+      <span class="tag">Pricing</span>
+      <h2 class="section-title">Pay Per Admin. Not Per Learner. Ever.</h2>
+      <p class="section-sub" style="margin:12px auto 0;">Your platform cost stays the same whether you have 500 or 100,000 learners. Every new client you win is pure margin.</p>
+    </div>
+    <div class="pricing-grid fade-up">
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Starter</div>
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-desc">For growing training providers</div>
+        <div class="pricing-price">From $60 <span>/ admin / month</span></div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Course creation + SCORM</div>
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Certificate management</div>
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Analytics + standard support</div>
+        </div>
+        <a href="#final-cta" class="pricing-cta">Get Started</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-popular">Most Popular</div>
+        <div class="pricing-tier">Pro</div>
+        <div class="pricing-name">Pro</div>
+        <div class="pricing-desc">For established training companies</div>
+        <div class="pricing-price">Custom <span>— Book a Demo</span></div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Everything in Starter</div>
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>White-label + custom domain</div>
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Social learning + gamification</div>
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Priority support</div>
+        </div>
+        <a href="#final-cta" class="pricing-cta">Book a Demo</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Enterprise</div>
+        <div class="pricing-name">Enterprise</div>
+        <div class="pricing-desc">For large training networks</div>
+        <div class="pricing-price">Custom <span>— Contact Sales</span></div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Everything in Pro</div>
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Multi-tenancy — unlimited clients</div>
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>API access + SSO</div>
+          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Dedicated account manager</div>
+        </div>
+        <a href="#final-cta" class="pricing-cta">Contact Sales</a>
+      </div>
+
+    </div>
+    <p class="pricing-note fade-up">No hidden fees. No per-learner penalties. Free trial — no credit card required.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ─────────────────────────────────────────── -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-intro fade-up">
+      <span class="tag">Frequently Asked Questions</span>
+      <h2 class="section-title">Questions About SimpliTrain and LMS for Training Companies</h2>
+    </div>
+    <div class="faq-list fade-up">
+
+      <div class="faq-item">
+        <button class="faq-q">
+          What is an LMS for training companies?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            An LMS for training companies is built for organisations that sell and deliver training to paying clients — not for internal employee training. It includes multi-tenant client portals, eCommerce, a built-in training scheduler (TMS), and flat-rate pricing that doesn't scale with learner volume. SimpliTrain combines LMS, TMS, and LXP in one platform for this exact use case.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          How is SimpliTrain different from a standard off-the-shelf LMS?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Off-the-shelf LMS platforms charge per learner, support only one organisation, and have no training scheduling or course storefront. SimpliTrain uses flat-rate per-admin pricing, supports unlimited client tenants, includes a built-in TMS for ILT and vILT, and has native eCommerce — purpose-built for training companies with multiple paying clients.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          What is the difference between an LMS, TMS, and LXP?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            An LMS (Learning Management System) manages course delivery and learner tracking. A TMS (Training Management System) handles instructor-led training logistics — scheduling, venues, waitlists. An LXP (Learning Experience Platform) personalises the learner experience with recommendations and social learning. SimpliTrain combines all three in a single subscription, eliminating the need for separate tools.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Does SimpliTrain support SCORM and xAPI (Tin Can API)?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Yes. SimpliTrain fully supports SCORM 1.2, xAPI (Tin Can API), and cmi5. Upload content from any compliant authoring tool and track detailed learner activity records. SimpliTrain also includes a native AI authoring tool to build SCORM-ready courses without external software.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Can SimpliTrain manage multiple corporate clients from one account?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Yes. SimpliTrain's multi-tenant architecture lets you create unlimited branded client portals from a single admin account. Each client sees their own logo, domain, and course catalog. You manage every client from one dashboard — no logging in and out, no duplicating content.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Is SimpliTrain suitable for healthcare and compliance training?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Yes. SimpliTrain supports HIPAA-compliant delivery, CEU credit tracking, multi-site management, and automated certificate renewals with expiry-date logic — making it purpose-built for healthcare, OSHA, and regulated compliance training environments.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          How long does SimpliTrain implementation take?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Most training companies go live in under two weeks. Your first branded client portal can be live within 48 hours. SimpliTrain's onboarding team handles configuration, content migration, and user setup — no developer resource needed.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          What does SimpliTrain's pricing look like?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            SimpliTrain uses flat-rate per-admin pricing — you pay based on how many administrators manage the platform, not how many learners use it. As you grow from 500 to 100,000 learners, your price stays the same. Plans start from $60 per admin per month. Free trial available — no credit card required.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Can I sell courses online through SimpliTrain?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Yes. SimpliTrain includes a built-in eCommerce and public course catalog. Set individual course prices, bundle programs, and accept payments — all within the platform, with no external payment gateway required.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Does SimpliTrain offer a free trial?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Yes. SimpliTrain offers a free trial with no credit card required. You can also book a free 15-minute demo where a specialist configures a live environment for your specific training workflow.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ────────────────────────────────────── -->
+<section id="final-cta">
+  <div class="container-sm">
+    <h2 class="cta-headline fade-up">Your training business deserves a platform <span>built for it.</span></h2>
+    <p class="cta-sub fade-up" style="transition-delay:120ms">Book a free 15-minute demo. We configure it live for your industry. No pitch. No pressure.</p>
+    <div class="cta-btns fade-up" style="transition-delay:240ms">
+      <a href="#" class="btn-primary" style="font-size:16px;padding:16px 32px;">Book My Free Demo &nbsp;→</a>
+      <a href="#" class="btn-ghost" style="font-size:16px;padding:15px 30px;">Get the Free Buyer's Guide</a>
+    </div>
+    <p class="cta-note fade-up" style="transition-delay:360ms">Free trial available. No credit card required.</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-text">Simpli<span>Train</span></div>
+      <p>The unified LMS + TMS + LXP platform built for commercial training companies.</p>
+    </div>
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <div class="footer-col-title">Product</div>
+        <a href="#">Multi-tenant Portals</a>
+        <a href="#">Training Scheduler</a>
+        <a href="#">Certificate Management</a>
+        <a href="#">AI Course Builder</a>
+        <a href="#">eCommerce</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="#">About SimpliTrain</a>
+        <a href="#">Pricing</a>
+        <a href="#">Customer Stories</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Industries</div>
+        <a href="#">Healthcare &amp; Compliance</a>
+        <a href="#">IT Certification</a>
+        <a href="#">Aviation Training</a>
+        <a href="#">Safety &amp; OSHA</a>
+        <a href="#">Sales Training</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 SimpliTrain / MundriSoft Solutions. All rights reserved.</span>
+    <span style="display:flex;gap:20px;">
+      <a href="#" style="color:rgba(255,255,255,.35);transition:.2s;font-size:12.5px;">Privacy Policy</a>
+      <a href="#" style="color:rgba(255,255,255,.35);transition:.2s;font-size:12.5px;">Terms of Service</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  // ── Sticky nav scroll ───────────────────────────
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ── Fade-up on scroll ───────────────────────────
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Trigger hero elements immediately
+  document.querySelectorAll('#hero .fade-up').forEach(el => {
+    const delay = parseInt(el.style.transitionDelay) || 0;
+    setTimeout(() => el.classList.add('visible'), delay + 200);
+  });
+
+  // ── Count-up animation ──────────────────────────
+  const countEls = document.querySelectorAll('.metric-num[data-target]');
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const target = parseInt(el.dataset.target);
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        let current = 0;
+        const step = Math.ceil(target / 40);
+        const timer = setInterval(() => {
+          current = Math.min(current + step, target);
+          el.textContent = prefix + current + suffix;
+          if (current >= target) clearInterval(timer);
+        }, 40);
+        countObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  countEls.forEach(el => countObserver.observe(el));
+
+  // ── FAQ accordion ───────────────────────────────
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+</body>
+</html>
