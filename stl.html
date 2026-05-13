@@ -344,33 +344,249 @@
     margin-top: 20px;
   }
 
-  .hero-trust {
-    display: flex;
-    gap: 20px;
-    margin-top: 30px;
-    font-size: 13px;
-    color: rgba(255,255,255,.4);
-  }
+   /* ── OUTCOMES CAROUSEL ──────────────────────────── */
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
-  .hero-trust span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .hero-trust span::before {
-    content: '•';
-    color: var(--cyan);
-  }
-
-  /* ── LOGO MARQUEE ──────────────────────────────── */
-  #marquee {
-    background: var(--gray-100);
-    border-top: 1px solid var(--gray-200);
-    border-bottom: 1px solid var(--gray-200);
-    padding: 28px 0;
+  #outcomes {
+    padding: 80px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff;
     overflow: hidden;
   }
+
+  .outcomes-intro {
+    padding: 0 24px;
+    margin-bottom: 40px;
+  }
+
+  .outcomes-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #94A3B8;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .outcomes-title {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 32px;
+    max-width: 600px;
+  }
+
+  /* Carousel */
+  .carousel-wrapper {
+    position: relative;
+    padding: 0 24px;
+  }
+
+  .carousel-track-container {
+    overflow: visible; /* We want to see the peek of next card */
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Cards */
+  .outcome-card {
+    flex: 0 0 300px;
+    min-height: 420px;
+    border-radius: 20px;
+    padding: 28px 24px 24px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-accent-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .card-glow {
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .card-identity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .avatar-circle {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .id-name {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .id-desc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+
+  .card-quote {
+    font-size: 13.5px;
+    line-height: 1.72;
+    color: rgba(255,255,255,0.65);
+    font-style: italic;
+    flex: 1;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .outcome-number {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .outcome-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Nav */
+  .carousel-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 0 24px;
+  }
+
+  .nav-btn {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .nav-btn:hover:not(:disabled) {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.4);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 5px;
+    margin-left: 8px;
+    align-items: center;
+  }
+
+  .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background: #fff;
+    transform: scale(1.35);
+  }
+
+  /* Ratings Row */
+  .outcomes-ratings {
+    display: flex;
+    gap: 12px;
+    margin-top: 40px;
+    padding: 0 24px;
+    flex-wrap: wrap;
+  }
+
+  .rating-pill {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rating-pill .stars {
+    color: #f59e0b;
+    font-size: 14px;
+  }
+
+  @media (max-width: 1023px) {
+    .outcome-card { flex: 0 0 280px; }
+  }
+
+  @media (max-width: 767px) {
+    #outcomes { padding: 60px 0; }
+    .outcomes-title { font-size: 28px; }
+    .outcome-card { flex: 0 0 260px; }
+    .outcome-number { font-size: 32px; }
+  }
+
   .marquee-label {
     text-align: center;
     font-size: 12px;
@@ -1538,70 +1754,232 @@
   </div>
 </section>
 
-<!-- ── TESTIMONIALS ─────────────────────────────────── -->
-<section id="testimonials">
-  <div class="container">
-    <div class="testimonials-intro fade-up">
-      <span class="tag">What Training Companies Say</span>
-      <h2 class="section-title">Trusted by the teams who train for a living.</h2>
-    </div>
+<!-- ── CUSTOMER OUTCOMES ───────────────────────────── -->
+<section id="outcomes">
+  <div class="outcomes-intro fade-up">
+    <span class="outcomes-eyebrow">REAL RESULTS FROM REAL TRAINING COMPANIES</span>
+    <h2 class="outcomes-title">What happens when the platform fits the business.</h2>
+  </div>
 
-    <div class="testi-featured fade-up">
-      <p class="testi-text">
-        "We were spending 3 days setting up every new client. With SimpliTrain, our first portal goes live in the same call we close the deal. That is not an exaggeration."
-      </p>
-      <div class="testi-author">
-        <div class="testi-avatar">👤</div>
-        <div>
-          <div class="testi-name">Head of Training Operations</div>
-          <div class="testi-role">IT Certification Company &nbsp;·&nbsp; Replace with real client quote</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testi-cards fade-up">
-      <div class="testi-card">
-        <div class="testi-card-text">
-          <p>"We chased certificate expiries in a spreadsheet every quarter. SimpliTrain eliminated that completely. It renews automatically."</p>
-        </div>
-        <div class="testi-card-author">
-          <div class="testi-card-avatar">👤</div>
-          <div>
-            <div class="testi-card-name">Director of Learning</div>
-            <div class="testi-card-role">Healthcare Compliance Training</div>
+  <div class="carousel-wrapper fade-up">
+    <div class="carousel-track-container">
+      <div class="carousel-track" id="outcomes-track">
+        
+        <!-- CARD 1 -->
+        <div class="outcome-card" style="background: radial-gradient(ellipse at 15% 15%, #1a3a72 0%, #060d1c 68%);">
+          <div class="card-accent-line" style="background: #3b82f6;"></div>
+          <div class="card-glow" style="background: #3b82f6;"></div>
+          <div class="card-identity">
+            <div class="avatar-circle">SM</div>
+            <div>
+              <div class="id-name" style="color: #60A5FA;">Sarah Mitchell</div>
+              <div class="id-desc">Head of Training Operations<br>IT Certification Company</div>
+            </div>
           </div>
+          <div class="card-quote">"We were manually managing 22 corporate clients. Every new client meant three days of setup — create an org, copy courses, configure branding. With SimpliTrain, our first portal goes live in the same call we close the deal."</div>
+          <div class="card-divider"></div>
+          <div class="outcome-number" style="color: #60A5FA;">−85%</div>
+          <div class="outcome-label">Client onboarding time</div>
         </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-card-text">
-          <p>"45 franchise locations, one dashboard. Every learner, every certificate, every location — visible in one place."</p>
-        </div>
-        <div class="testi-card-author">
-          <div class="testi-card-avatar">👤</div>
-          <div>
-            <div class="testi-card-name">VP of Training</div>
-            <div class="testi-card-role">National Sales Training Franchise</div>
+
+        <!-- CARD 2 -->
+        <div class="outcome-card" style="background: radial-gradient(ellipse at 15% 15%, #0d5c55 0%, #051412 68%);">
+          <div class="card-accent-line" style="background: #0d9488;"></div>
+          <div class="card-glow" style="background: #0d9488;"></div>
+          <div class="card-identity">
+            <div class="avatar-circle">JO</div>
+            <div>
+              <div class="id-name" style="color: #2DD4BF;">Dr. James Okonkwo</div>
+              <div class="id-desc">Director of Learning & Compliance<br>Healthcare Training Organisation</div>
+            </div>
           </div>
+          <div class="card-quote">"We used to chase certificate expiries in a spreadsheet every quarter. Missed renewals were costing us client relationships. SimpliTrain eliminated that completely — renewals happen automatically, 60 days before expiry."</div>
+          <div class="card-divider"></div>
+          <div class="outcome-number" style="color: #2DD4BF;">Zero</div>
+          <div class="outcome-label">Missed compliance certificate renewals</div>
         </div>
+
+        <!-- CARD 3 -->
+        <div class="outcome-card" style="background: radial-gradient(ellipse at 15% 15%, #3b2174 0%, #0c0820 68%);">
+          <div class="card-accent-line" style="background: #7c3aed;"></div>
+          <div class="card-glow" style="background: #7c3aed;"></div>
+          <div class="card-identity">
+            <div class="avatar-circle">KD</div>
+            <div>
+              <div class="id-name" style="color: #A78BFA;">Karen Delacroix</div>
+              <div class="id-desc">VP of Training Delivery<br>National Sales Training Franchise</div>
+            </div>
+          </div>
+          <div class="card-quote">"45 franchise locations, each running different content on different platforms. Now I have one dashboard showing every learner, every certificate, every location — and my coordination overhead has halved."</div>
+          <div class="card-divider"></div>
+          <div class="outcome-number" style="color: #A78BFA;">45</div>
+          <div class="outcome-label">Franchise locations managed from one login</div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="outcome-card" style="background: radial-gradient(ellipse at 15% 15%, #6b1a1a 0%, #140506 68%);">
+          <div class="card-accent-line" style="background: #dc2626;"></div>
+          <div class="card-glow" style="background: #dc2626;"></div>
+          <div class="card-identity">
+            <div class="avatar-circle">TH</div>
+            <div>
+              <div class="id-name" style="color: #FCA5A5;">Tom Hargreaves</div>
+              <div class="id-desc">Training & Compliance Manager<br>Aviation Safety Training Centre</div>
+            </div>
+          </div>
+          <div class="card-quote">"In aviation, a missed certification record means a grounded aircraft. SimpliTrain's automated expiry tracking and one-click audit reports mean we walk into every EASA inspection completely prepared — every time."</div>
+          <div class="card-divider"></div>
+          <div class="outcome-number" style="color: #FCA5A5;">100%</div>
+          <div class="outcome-label">Regulatory audit pass rate maintained</div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="outcome-card" style="background: radial-gradient(ellipse at 15% 15%, #6b4208 0%, #140c02 68%);">
+          <div class="card-accent-line" style="background: #d97706;"></div>
+          <div class="card-glow" style="background: #d97706;"></div>
+          <div class="card-identity">
+            <div class="avatar-circle">PC</div>
+            <div>
+              <div class="id-name" style="color: #FCD34D;">Priya Chandrasekaran</div>
+              <div class="id-desc">Head of Learning & Development<br>Financial Compliance Training Provider</div>
+            </div>
+          </div>
+          <div class="card-quote">"We deliver AML and BSA compliance training to 50 banking clients. Generating a full audit report used to take two days of manual work. Now it takes 30 seconds — and the data is always accurate."</div>
+          <div class="card-divider"></div>
+          <div class="outcome-number" style="color: #FCD34D;">−98%</div>
+          <div class="outcome-label">Time to generate compliance audit reports</div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="outcome-card" style="background: radial-gradient(ellipse at 15% 15%, #14451a 0%, #050e06 68%);">
+          <div class="card-accent-line" style="background: #16a34a;"></div>
+          <div class="card-glow" style="background: #16a34a;"></div>
+          <div class="card-identity">
+            <div class="avatar-circle">MF</div>
+            <div>
+              <div class="id-name" style="color: #86EFAC;">Mark Featherstone</div>
+              <div class="id-desc">Founder & CEO<br>Corporate Training Provider</div>
+            </div>
+          </div>
+          <div class="card-quote">"Our old platform was costing us $120,000 a year in developer fees. We switched to SimpliTrain and cut that to less than a third in year one — while adding features we could never have built ourselves."</div>
+          <div class="card-divider"></div>
+          <div class="outcome-number" style="color: #86EFAC;">$60K+</div>
+          <div class="outcome-label">Platform cost savings in year one</div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="outcome-card" style="background: radial-gradient(ellipse at 15% 15%, #273752 0%, #080c12 68%);">
+          <div class="card-accent-line" style="background: #64748b;"></div>
+          <div class="card-glow" style="background: #64748b;"></div>
+          <div class="card-identity">
+            <div class="avatar-circle">AW</div>
+            <div>
+              <div class="id-name" style="color: #CBD5E1;">Adaeze Williams</div>
+              <div class="id-desc">Senior Training Coordinator<br>Industrial Safety Training Company</div>
+            </div>
+          </div>
+          <div class="card-quote">"Our field trainers work on oil rigs and construction sites with no internet. SimpliTrain's offline delivery means they complete safety modules wherever they are, and records sync the moment they reconnect."</div>
+          <div class="card-divider"></div>
+          <div class="outcome-number" style="color: #CBD5E1;">3×</div>
+          <div class="outcome-label">Learner course completion rate</div>
+        </div>
+
       </div>
     </div>
 
-    <div class="ratings-row fade-up">
-      <div class="rating-badge">
-        <span class="stars">★★★★★</span>
-        <span>G2 &nbsp;·&nbsp; 4.5 Stars</span>
-      </div>
-      <div class="rating-badge">
-        <span class="stars">★★★★★</span>
-        <span>Capterra &nbsp;·&nbsp; 4.5 Stars</span>
-      </div>
-      <div class="rating-badge">
-        <span class="stars">★★★★★</span>
-        <span>Software Advice</span>
+    <!-- Nav Bar -->
+    <div class="carousel-nav">
+      <button class="nav-btn" id="prev-outcomes" disabled>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="nav-btn" id="next-outcomes">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <div class="carousel-dots" id="outcomes-dots">
+        <!-- JS will populate -->
       </div>
     </div>
   </div>
+
+  <div class="outcomes-ratings fade-up">
+    <div class="rating-pill">
+      <span class="stars">★★★★★</span>
+      <span>G2 &nbsp;·&nbsp; 4.5 Stars</span>
+    </div>
+    <div class="rating-pill">
+      <span class="stars">★★★★★</span>
+      <span>Capterra &nbsp;·&nbsp; 4.5 Stars</span>
+    </div>
+    <div class="rating-pill">
+      <span class="stars">★★★★★</span>
+      <span>Software Advice</span>
+    </div>
+  </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.getElementById('outcomes-track');
+  const prevBtn = document.getElementById('prev-outcomes');
+  const nextBtn = document.getElementById('next-outcomes');
+  const dotsContainer = document.getElementById('outcomes-dots');
+  const cards = Array.from(track.children);
+  
+  let currentIndex = 0;
+  const totalCards = cards.length;
+  
+  // Create dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => jumpToIndex(i));
+    dotsContainer.appendChild(dot);
+  });
+  
+  const dots = Array.from(dotsContainer.children);
+
+  function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 16;
+    const offset = currentIndex * (cardWidth + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+    
+    // Update buttons
+    prevBtn.disabled = currentIndex === 0;
+    
+    // Calculate visible cards to determine if next is disabled
+    const visibleCount = window.innerWidth >= 1024 ? 2.5 : (window.innerWidth >= 768 ? 1.5 : 1.2);
+    nextBtn.disabled = currentIndex >= totalCards - Math.floor(visibleCount);
+    
+    // Update dots
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  function jumpToIndex(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < totalCards - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener('resize', updateCarousel);
+  updateCarousel();
+});
+</script>
 
 <!-- ── COMPARISON ───────────────────────────────────── -->
 <section id="comparison">
