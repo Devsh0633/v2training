@@ -1150,6 +1150,118 @@
     }
   }
 
+  /* ── INTEGRATIONS ──────────────────────────────── */
+  #integrations {
+    background: #F2F5F9;
+    padding: 80px 24px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .integrations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 38% 62%;
+    gap: 64px;
+    align-items: flex-start;
+  }
+  .integrations-eyebrow {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #0D9488;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .integrations-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0B1F3A;
+    line-height: 1.3;
+    margin-bottom: 24px;
+  }
+  .integrations-body {
+    font-size: 14px;
+    color: #4B5563;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .integrations-cta {
+    display: inline-block;
+    background: #0D9488;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .integrations-cta:hover {
+    background: #0F766E;
+  }
+  
+  .integrations-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .integrations-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .integrations-row:first-child {
+    padding-top: 0;
+  }
+  .integrations-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .integrations-label {
+    min-width: 110px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #0D9488;
+    font-weight: 700;
+    margin-top: 6px;
+  }
+  .integrations-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .integration-pill {
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: #374151;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  .integration-pill:hover {
+    border-color: #0D9488;
+    color: #0D9488;
+  }
+
+  @media (max-width: 900px) {
+    .integrations-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+  @media (max-width: 600px) {
+    .integrations-row {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .integrations-label {
+      margin-top: 0;
+    }
+  }
+
   /* ── FAQ ───────────────────────────────────────── */
   #faq {
     background: var(--white);
@@ -1949,6 +2061,77 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="impact-block">
         <div class="impact-number">30%</div>
         <div class="impact-label">Fewer compliance incidents through automated tracking and alerts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTEGRATIONS ──────────────────────────────── -->
+<section id="integrations">
+  <div class="integrations-container">
+    <div class="integrations-left fade-up">
+      <span class="integrations-eyebrow">INTEGRATIONS</span>
+      <h2 class="integrations-title">Plugs into every tool your training stack already runs on.</h2>
+      <p class="integrations-body">SimpliTrain connects with the platforms your team uses daily — from virtual classrooms and payment gateways to HR systems and content libraries — through native integrations and open API.</p>
+      <a href="#" class="integrations-cta">Explore all integrations &rarr;</a>
+    </div>
+    
+    <div class="integrations-grid fade-up" style="transition-delay: 150ms;">
+      <div class="integrations-row">
+        <div class="integrations-label">Virtual Class</div>
+        <div class="integrations-pills">
+          <span class="integration-pill">Zoom</span>
+          <span class="integration-pill">Webex</span>
+          <span class="integration-pill">Google Meet</span>
+          <span class="integration-pill">GoToMeeting</span>
+        </div>
+      </div>
+      <div class="integrations-row">
+        <div class="integrations-label">eCommerce</div>
+        <div class="integrations-pills">
+          <span class="integration-pill">Shopify</span>
+          <span class="integration-pill">WooCommerce</span>
+          <span class="integration-pill">Stripe</span>
+          <span class="integration-pill">PayPal</span>
+          <span class="integration-pill">Magento</span>
+        </div>
+      </div>
+      <div class="integrations-row">
+        <div class="integrations-label">Single Sign-On</div>
+        <div class="integrations-pills">
+          <span class="integration-pill">Azure AD</span>
+          <span class="integration-pill">Google SSO</span>
+          <span class="integration-pill">Okta</span>
+          <span class="integration-pill">SAML 2.0</span>
+          <span class="integration-pill">OAuth 2.0</span>
+        </div>
+      </div>
+      <div class="integrations-row">
+        <div class="integrations-label">HR Systems</div>
+        <div class="integrations-pills">
+          <span class="integration-pill">BambooHR</span>
+          <span class="integration-pill">Workday</span>
+          <span class="integration-pill">MS Dynamics</span>
+          <span class="integration-pill">ADP</span>
+        </div>
+      </div>
+      <div class="integrations-row">
+        <div class="integrations-label">Content Libs</div>
+        <div class="integrations-pills">
+          <span class="integration-pill">Virtual Labs</span>
+          <span class="integration-pill">IT Courseware</span>
+          <span class="integration-pill">Video Training</span>
+          <span class="integration-pill">Coding Platforms</span>
+        </div>
+      </div>
+      <div class="integrations-row">
+        <div class="integrations-label">Standards</div>
+        <div class="integrations-pills">
+          <span class="integration-pill">SCORM 1.2</span>
+          <span class="integration-pill">xAPI / Tin Can</span>
+          <span class="integration-pill">AICC</span>
+          <span class="integration-pill">cmi5</span>
+        </div>
       </div>
     </div>
   </div>
