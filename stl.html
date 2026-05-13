@@ -1262,8 +1262,137 @@
     }
   }
 
+  /* ── RECOGNITION ───────────────────────────────── */
+  #recognition {
+    background: #FFFFFF;
+    border-top: 1px solid #F1F5F9;
+    padding: 80px 24px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .recognition-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .recognition-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .recognition-eyebrow {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #0D9488;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .recognition-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0B1F3A;
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+  .recognition-body {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .recognition-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .recognition-card {
+    background: #fff;
+    border: 1px solid #E9EFF7;
+    border-radius: 16px;
+    padding: 28px 22px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .recognition-top-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+  .recognition-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .recognition-badge.g2 { background: #FFF0EE; color: #FF492C; font-size: 11px; text-transform: uppercase; }
+  .recognition-badge.capterra { background: #FFF4EE; color: #FF6B2B; font-size: 11px; text-transform: uppercase; }
+  .recognition-badge.markets { background: #EEF2F8; color: #0B1F3A; font-size: 9px; text-transform: uppercase; }
+  .recognition-badge.software { background: #E6FBF8; color: #0D9488; font-size: 11px; text-transform: uppercase; }
+  
+  .recognition-rating {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0B1F3A;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .recognition-year {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0B1F3A;
+    line-height: 1;
+    margin-bottom: 8px;
+    height: 40px; /* match rating height visually */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .recognition-stars {
+    color: #F59E0B;
+    font-size: 16px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+  .recognition-sublabel {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0B1F3A;
+    margin-bottom: 16px;
+  }
+  .recognition-tag {
+    font-size: 12.5px;
+    color: #374151;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    flex-grow: 1;
+  }
+  .recognition-sub {
+    font-size: 10px;
+    color: #C4C9D4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 1024px) {
+    .recognition-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .recognition-grid { grid-template-columns: 1fr; }
+  }
+
   /* ── FAQ ───────────────────────────────────────── */
   #faq {
+    display: none !important;
     background: var(--white);
     padding: 100px 24px;
   }
@@ -2132,6 +2261,59 @@ document.addEventListener('DOMContentLoaded', function() {
           <span class="integration-pill">AICC</span>
           <span class="integration-pill">cmi5</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RECOGNITION ───────────────────────────────── -->
+<section id="recognition">
+  <div class="recognition-container">
+    <div class="recognition-header fade-up">
+      <span class="recognition-eyebrow">RECOGNITION</span>
+      <h2 class="recognition-title">Independently evaluated. Consistently recognised.</h2>
+      <p class="recognition-body">From global analyst reports to verified user review platforms, SimpliTrain's impact on commercial training operations is documented, rated, and recognised.</p>
+    </div>
+    
+    <div class="recognition-grid fade-up" style="transition-delay: 150ms;">
+      <!-- Card 1 -->
+      <div class="recognition-card">
+        <div class="recognition-top-accent" style="background: #FF492C;"></div>
+        <div class="recognition-badge g2">G2</div>
+        <div class="recognition-rating">4.5</div>
+        <div class="recognition-stars">★★★★½</div>
+        <div class="recognition-tag">Training Management Software Category</div>
+        <div class="recognition-sub">Verified user reviews</div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="recognition-card">
+        <div class="recognition-top-accent" style="background: #FF6B2B;"></div>
+        <div class="recognition-badge capterra">Capterra</div>
+        <div class="recognition-rating">4.5</div>
+        <div class="recognition-stars">★★★★½</div>
+        <div class="recognition-tag">Learning Management System Software</div>
+        <div class="recognition-sub">Verified user reviews</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="recognition-card">
+        <div class="recognition-top-accent" style="background: #0B1F3A;"></div>
+        <div class="recognition-badge markets">MarketsandMarkets™</div>
+        <div class="recognition-year">2025</div>
+        <div class="recognition-sublabel">LMS Market Matrix</div>
+        <div class="recognition-tag">Company Evaluation Matrix — Featured</div>
+        <div class="recognition-sub">Global analyst recognition</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="recognition-card">
+        <div class="recognition-top-accent" style="background: #0D9488;"></div>
+        <div class="recognition-badge software">Software Advice</div>
+        <div class="recognition-rating">4.5</div>
+        <div class="recognition-stars">★★★★½</div>
+        <div class="recognition-tag">LMS Software Category</div>
+        <div class="recognition-sub">Verified user reviews</div>
       </div>
     </div>
   </div>
