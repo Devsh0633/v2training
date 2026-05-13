@@ -1063,127 +1063,95 @@
   .comp-x { color: #E53E3E; font-size: 16px; }
   .comp-check { color: var(--cyan); font-size: 16px; }
 
-  /* ── PRICING ───────────────────────────────────── */
-  #pricing {
-    background: var(--gray-100);
-    padding: 100px 24px;
+  /* ── IMPACT NUMBERS ────────────────────────────── */
+  #impact {
+    background: #0B1F3A;
+    padding: 80px 24px;
+    font-family: 'DM Sans', sans-serif;
   }
-  .pricing-intro { text-align: center; margin-bottom: 56px; }
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 1000px;
+  .impact-container {
+    max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 60px;
+    align-items: center;
   }
-  .pricing-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 36px 32px;
-    border: 1px solid var(--gray-200);
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    transition: transform var(--transition), box-shadow var(--transition);
-    position: relative;
+  .impact-left {
+    padding-right: 20px;
   }
-  .pricing-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-md);
-  }
-  .pricing-card.featured {
-    border-color: var(--cyan);
-    border-width: 2px;
-    background: var(--white);
-    transform: scale(1.03);
-  }
-  .pricing-card.featured:hover {
-    transform: scale(1.03) translateY(-6px);
-  }
-  .pricing-popular {
-    position: absolute;
-    top: -13px; left: 50%;
-    transform: translateX(-50%);
-    background: var(--cyan);
-    color: var(--white);
-    font-size: 11px; font-weight: 700;
-    letter-spacing: .08em;
+  .impact-eyebrow {
+    font-size: 10px;
     text-transform: uppercase;
-    padding: 4px 16px;
-    border-radius: 100px;
-    white-space: nowrap;
-  }
-  .pricing-tier {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--cyan);
-    margin-bottom: 8px;
-  }
-  .pricing-name {
-    font-size: 24px;
+    letter-spacing: 0.16em;
+    color: #2DD4BF;
     font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 6px;
-  }
-  .pricing-desc {
-    font-size: 13px;
-    color: var(--gray-500);
-    margin-bottom: 20px;
-  }
-  .pricing-price {
-    font-size: 30px;
-    font-weight: 800;
-    color: var(--text-dark);
-    margin-bottom: 4px;
-    line-height: 1.1;
-  }
-  .pricing-price span { font-size: 15px; font-weight: 500; color: var(--gray-500); }
-  .pricing-divider {
-    height: 1px;
-    background: var(--gray-200);
-    margin: 20px 0;
-  }
-  .pricing-features { display: flex; flex-direction: column; gap: 10px; flex: 1; margin-bottom: 28px; }
-  .pricing-feature {
-    display: flex; align-items: flex-start; gap: 10px;
-    font-size: 13.5px; color: var(--text-body);
-  }
-  .pricing-feature-icon {
-    color: var(--cyan); font-size: 13px; flex-shrink: 0; margin-top: 2px;
-  }
-  .pricing-cta {
+    margin-bottom: 16px;
     display: block;
-    text-align: center;
-    padding: 13px 24px;
-    border-radius: var(--radius-sm);
+  }
+  .impact-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 24px;
+  }
+  .impact-body {
     font-size: 14px;
-    font-weight: 600;
-    transition: all var(--transition);
-    background: var(--sky);
-    color: var(--blue);
-    border: 1.5px solid var(--sky-deep);
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    margin-bottom: 32px;
   }
-  .pricing-cta:hover {
-    background: var(--blue);
-    color: var(--white);
-    border-color: var(--blue);
+  .impact-note {
+    font-size: 11px;
+    font-style: italic;
+    color: rgba(255,255,255,0.3);
   }
-  .pricing-card.featured .pricing-cta {
-    background: var(--cyan);
-    color: var(--white);
-    border-color: var(--cyan);
+  .impact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(255,255,255,0.06);
+    border-radius: 16px;
+    gap: 2px;
+    overflow: hidden;
   }
-  .pricing-card.featured .pricing-cta:hover {
-    background: var(--blue-light);
-    border-color: var(--blue-light);
+  .impact-block {
+    background: #0B1F3A;
+    padding: 32px 28px;
+    transition: background 0.3s ease;
   }
-  .pricing-note {
-    text-align: center;
-    font-size: 13.5px;
-    color: var(--gray-500);
-    margin-top: 32px;
+  .impact-number {
+    font-size: 52px;
+    font-weight: 800;
+    color: #2DD4BF;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    line-height: 1;
+    transition: color 0.3s ease;
+  }
+  .impact-label {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.5;
+    max-width: 160px;
+  }
+  .impact-block:hover .impact-number {
+    color: #fff;
+  }
+
+  @media (max-width: 900px) {
+    .impact-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .impact-left {
+      padding-right: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    .impact-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* ── FAQ ───────────────────────────────────────── */
@@ -1960,63 +1928,33 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-<!-- ── PRICING ──────────────────────────────────────── -->
-<section id="pricing">
-  <div class="container">
-    <div class="pricing-intro fade-up">
-      <span class="tag">Pricing</span>
-      <h2 class="section-title">Pay Per Admin. Not Per Learner. Ever.</h2>
-      <p class="section-sub" style="margin:12px auto 0;">Your platform cost stays the same whether you have 500 or 100,000 learners. Every new client you win is pure margin.</p>
+<!-- ── IMPACT NUMBERS ────────────────────────────── -->
+<section id="impact">
+  <div class="impact-container">
+    <div class="impact-left fade-up">
+      <span class="impact-eyebrow">BY THE NUMBERS</span>
+      <h2 class="impact-title">What training companies report after making the switch.</h2>
+      <p class="impact-body">Published benchmarks from SimpliTrain customers and unified LMS + TMS platform research across commercial training organisations.</p>
+      <p class="impact-note">Sources: SimpliTrain platform benchmarks · TMS+LMS unification study (simplitrain.com)</p>
     </div>
-    <div class="pricing-grid fade-up">
-
-      <div class="pricing-card">
-        <div class="pricing-tier">Starter</div>
-        <div class="pricing-name">Starter</div>
-        <div class="pricing-desc">For growing training providers</div>
-        <div class="pricing-price">From $60 <span>/ admin / month</span></div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-features">
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Course creation + SCORM</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Certificate management</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Analytics + standard support</div>
-        </div>
-        <a href="#final-cta" class="pricing-cta">Get Started</a>
+    <div class="impact-grid fade-up" style="transition-delay:150ms;">
+      <div class="impact-block">
+        <div class="impact-number">40%</div>
+        <div class="impact-label">Increase in operational efficiency from unifying TMS and LMS</div>
       </div>
-
-      <div class="pricing-card featured">
-        <div class="pricing-popular">Most Popular</div>
-        <div class="pricing-tier">Pro</div>
-        <div class="pricing-name">Pro</div>
-        <div class="pricing-desc">For established training companies</div>
-        <div class="pricing-price">Custom <span>— Book a Demo</span></div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-features">
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Everything in Starter</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>White-label + custom domain</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Social learning + gamification</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Priority support</div>
-        </div>
-        <a href="#final-cta" class="pricing-cta">Book a Demo</a>
+      <div class="impact-block">
+        <div class="impact-number">25%</div>
+        <div class="impact-label">Reduction in administrative overhead per training programme</div>
       </div>
-
-      <div class="pricing-card">
-        <div class="pricing-tier">Enterprise</div>
-        <div class="pricing-name">Enterprise</div>
-        <div class="pricing-desc">For large training networks</div>
-        <div class="pricing-price">Custom <span>— Contact Sales</span></div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-features">
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Everything in Pro</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Multi-tenancy — unlimited clients</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>API access + SSO</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✓</span>Dedicated account manager</div>
-        </div>
-        <a href="#final-cta" class="pricing-cta">Contact Sales</a>
+      <div class="impact-block">
+        <div class="impact-number">50%</div>
+        <div class="impact-label">Higher course completion when learners have one streamlined portal</div>
       </div>
-
+      <div class="impact-block">
+        <div class="impact-number">30%</div>
+        <div class="impact-label">Fewer compliance incidents through automated tracking and alerts</div>
+      </div>
     </div>
-    <p class="pricing-note fade-up">No hidden fees. No per-learner penalties. Free trial — no credit card required.</p>
   </div>
 </section>
 
