@@ -621,39 +621,6 @@
   }
   .marquee-item span { color: var(--gray-300); }
 
-  /* ── BOLD STATEMENT ────────────────────────────── */
-  #statement {
-    background: var(--navy);
-    padding: 100px 24px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  #statement::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 800px 300px at 50% 50%, rgba(39,174,206,.07) 0%, transparent 70%);
-  }
-  .statement-text {
-    font-size: clamp(26px, 4.5vw, 48px);
-    font-weight: 700;
-    color: var(--white);
-    max-width: 880px;
-    margin: 0 auto;
-    line-height: 1.3;
-    position: relative;
-  }
-  .statement-text em {
-    font-style: normal;
-    color: var(--cyan);
-  }
-  .statement-sub {
-    font-size: 17px;
-    color: rgba(255,255,255,.55);
-    margin-top: 16px;
-    position: relative;
-  }
 
   /* ── FEATURES ──────────────────────────────────── */
   #features {
@@ -1750,16 +1717,6 @@
   </div>
 </section>
 
-<!-- ── BOLD STATEMENT ──────────────────────────────── -->
-<section id="statement">
-  <div class="container-sm">
-    <p class="statement-text fade-up">
-      Scale your business.<br>
-      <span>Not your admin.</span>
-    </p>
-    <p class="statement-sub fade-up" style="transition-delay:150ms;">Built for companies that sell training for a living.</p>
-  </div>
-</section>
 
 <!-- ── CUSTOMER OUTCOMES ───────────────────────────── -->
 <section id="outcomes">
