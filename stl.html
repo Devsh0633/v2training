@@ -1064,6 +1064,269 @@
   .comp-x { color: #E53E3E; font-size: 16px; }
   .comp-check { color: var(--cyan); font-size: 16px; }
 
+  /* ── PRICING MODEL ─────────────────────────────── */
+  #pricing-model {
+    background: #0B1F3A;
+    padding: 72px 40px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .pm-container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .pm-intro {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .pm-eyebrow {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #2DD4BF;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .pm-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .pm-title span {
+    display: block;
+    color: #2DD4BF;
+  }
+  .pm-subtext {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .pm-slider-wrapper {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+  .pm-slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .pm-slider-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-weight: 600;
+  }
+  .pm-slider-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2DD4BF;
+  }
+  .pm-range-input {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 5px;
+    outline: none;
+    margin: 10px 0;
+  }
+  .pm-range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #2DD4BF;
+    border: 3px solid #0B1F3A;
+    cursor: pointer;
+  }
+  .pm-range-input::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #2DD4BF;
+    border: 3px solid #0B1F3A;
+    cursor: pointer;
+  }
+  .pm-slider-marks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+  }
+  .pm-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .pm-card {
+    border-radius: 14px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .pm-card.per-learner {
+    background: rgba(220,38,38,0.08);
+    border: 1px solid rgba(220,38,38,0.2);
+  }
+  .pm-card.flat-rate {
+    background: rgba(13,148,136,0.10);
+    border: 1px solid rgba(13,148,136,0.3);
+  }
+  .pm-card-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 16px;
+    align-self: flex-start;
+  }
+  .pm-card.per-learner .pm-card-badge {
+    background: rgba(220,38,38,0.15);
+    color: #FCA5A5;
+  }
+  .pm-card.flat-rate .pm-card-badge {
+    background: rgba(13,148,136,0.2);
+    color: #2DD4BF;
+  }
+  .pm-model-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+  }
+  .pm-cost {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .pm-card.per-learner .pm-cost { color: #F87171; }
+  .pm-card.flat-rate .pm-cost { color: #2DD4BF; }
+  .pm-per-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 24px;
+  }
+  .pm-desc {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: auto;
+  }
+  .pm-card.per-learner .pm-desc { color: rgba(255,255,255,0.4); }
+  .pm-card.flat-rate .pm-desc { color: rgba(255,255,255,0.5); }
+  .pm-card.per-learner .pm-desc strong { font-weight: 700; color: rgba(255,255,255,0.6); }
+  .pm-card.flat-rate .pm-desc strong { font-weight: 700; color: rgba(255,255,255,0.65); }
+  
+  .pm-savings {
+    background: rgba(45,212,191,0.07);
+    border: 1px solid rgba(45,212,191,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    gap: 24px;
+  }
+  .pm-savings-left {
+    display: flex;
+    flex-direction: column;
+  }
+  .pm-savings-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .pm-savings-val {
+    font-size: 32px;
+    font-weight: 800;
+    color: #2DD4BF;
+  }
+  .pm-savings-right {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    max-width: 420px;
+    line-height: 1.5;
+  }
+  
+  .pm-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .pm-pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 7px 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pm-pill::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #2DD4BF;
+    border-radius: 50%;
+  }
+  
+  .pm-cta-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .pm-primary-btn {
+    background: #2DD4BF;
+    color: #0B1F3A;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 13px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .pm-primary-btn:hover { background: #14B8A6; }
+  .pm-ghost-link {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  .pm-ghost-link:hover { color: #fff; }
+
+  @media (max-width: 768px) {
+    .pm-cards { grid-template-columns: 1fr; }
+    .pm-savings { flex-direction: column; align-items: flex-start; }
+    .pm-title { font-size: 28px; }
+  }
+  @media (max-width: 480px) {
+    #pricing-model { padding: 60px 20px; }
+    .pm-slider-wrapper { padding: 20px; }
+    .pm-slider-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .pm-cost { font-size: 36px; }
+  }
+
   /* ── IMPACT NUMBERS ────────────────────────────── */
   #impact {
     background: #0B1F3A;
@@ -2166,6 +2429,72 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
+<!-- ── PRICING MODEL ─────────────────────────────── -->
+<section id="pricing-model">
+  <div class="pm-container">
+    <div class="pm-intro fade-up">
+      <span class="pm-eyebrow">THE PRICING MODEL THAT CHANGES EVERYTHING</span>
+      <h2 class="pm-title">Your learner count doubles.<span>Your bill doesn't.</span></h2>
+      <p class="pm-subtext">Every other LMS charges you per learner — so every new client you win costs you more. SimpliTrain uses flat-rate per-admin pricing. Scale from 500 to 100,000 learners and your platform cost stays exactly the same.</p>
+    </div>
+
+    <div class="pm-slider-wrapper fade-up">
+      <div class="pm-slider-header">
+        <span class="pm-slider-label">DRAG TO SET YOUR ACTIVE LEARNER COUNT</span>
+        <span class="pm-slider-value" id="pmLearnerDisplay">5,000</span>
+      </div>
+      <input type="range" id="pmLearnerSlider" class="pm-range-input" min="500" max="50000" step="500" value="5000">
+      <div class="pm-slider-marks">
+        <span>500</span>
+        <span>10,000</span>
+        <span>25,000</span>
+        <span>50,000</span>
+      </div>
+    </div>
+
+    <div class="pm-cards fade-up">
+      <!-- Left Card -->
+      <div class="pm-card per-learner">
+        <span class="pm-card-badge">PER-LEARNER LMS</span>
+        <div class="pm-model-label">Pricing model: charged per learner per year</div>
+        <div class="pm-cost" id="pmPerLearnerCost">$40,000</div>
+        <div class="pm-per-label">at $8 per learner / year</div>
+        <div class="pm-desc">Every time you onboard a new client, your cost goes up. <strong>Growth punishes you.</strong> Scale from 5,000 to 10,000 learners and your annual bill doubles.</div>
+      </div>
+      <!-- Right Card -->
+      <div class="pm-card flat-rate">
+        <span class="pm-card-badge">SIMPLITRAIN FLAT-RATE</span>
+        <div class="pm-model-label">Pricing model: flat per admin, unlimited learners</div>
+        <div class="pm-cost">Same rate</div>
+        <div class="pm-per-label">regardless of learner count</div>
+        <div class="pm-desc">Your platform cost is fixed to the number of admins — not learners. <strong>Every new client you win is pure margin.</strong> 100,000 learners costs the same as 100.</div>
+      </div>
+    </div>
+
+    <div class="pm-savings fade-up">
+      <div class="pm-savings-left">
+        <span class="pm-savings-label">ANNUAL SAVINGS OVER PER-LEARNER PRICING</span>
+        <span class="pm-savings-val" id="pmSavingsValue">+$37,840</span>
+      </div>
+      <div class="pm-savings-right" id="pmSavingsText">
+        At 5,000 learners, a standard LMS costs $40,000 annually. With SimpliTrain's flat rate, you keep the difference.
+      </div>
+    </div>
+
+    <div class="pm-pills fade-up">
+      <span class="pm-pill">Unlimited learners on every plan</span>
+      <span class="pm-pill">No per-learner overage fees</span>
+      <span class="pm-pill">Price fixed to admin seats only</span>
+      <span class="pm-pill">Full ROI typically within 6 months</span>
+    </div>
+
+    <div class="pm-cta-row fade-up">
+      <a href="#" class="pm-primary-btn">See SimpliTrain Pricing &rarr;</a>
+      <a href="#" class="pm-ghost-link">Book a demo to see your custom rate</a>
+    </div>
+  </div>
+</section>
+
 <!-- ── IMPACT NUMBERS ────────────────────────────── -->
 <section id="impact">
   <div class="impact-container">
@@ -2575,6 +2904,36 @@ document.addEventListener('DOMContentLoaded', function() {
         answer.style.maxHeight = answer.scrollHeight + 'px';
       }
     });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('pmLearnerSlider');
+    const learnerDisplay = document.getElementById('pmLearnerDisplay');
+    const perLearnerCostDisplay = document.getElementById('pmPerLearnerCost');
+    const savingsValueDisplay = document.getElementById('pmSavingsValue');
+    const savingsTextDisplay = document.getElementById('pmSavingsText');
+
+    const formatNumber = (num) => num.toLocaleString('en-US');
+    const formatCurrency = (num) => '$' + num.toLocaleString('en-US');
+
+    const updatePricing = () => {
+      const learners = parseInt(slider.value, 10);
+      const perLearnerCost = learners * 8;
+      const simplitrainBase = 2160;
+      const savings = perLearnerCost - simplitrainBase;
+
+      learnerDisplay.textContent = formatNumber(learners);
+      perLearnerCostDisplay.textContent = formatCurrency(perLearnerCost);
+      savingsValueDisplay.textContent = '+' + formatCurrency(savings);
+      savingsTextDisplay.textContent = `At ${formatNumber(learners)} learners, a standard LMS costs ${formatCurrency(perLearnerCost)} annually. With SimpliTrain's flat rate, you keep the difference.`;
+    };
+
+    if(slider) {
+      slider.addEventListener('input', updatePricing);
+      updatePricing(); // Init
+    }
   });
 </script>
 </body>
