@@ -233,12 +233,12 @@
   }
 
   .hero-container {
-    max-width: 1200px;
+    max-width: 1300px;
     width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 40px;
     align-items: center;
     position: relative;
     z-index: 2;
@@ -246,14 +246,14 @@
 
   .hero-visual {
     position: relative;
+    margin-left: -80px;
   }
   
   .hero-dashboard-img {
-    width: 115%;
+    width: 110%;
     height: auto;
-    border-radius: 20px;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-    transform: perspective(1000px) rotateY(5deg) rotateX(2deg);
+    border-radius: 12px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.6);
     transition: transform 0.5s ease;
   }
   
@@ -276,17 +276,19 @@
   }
 
   .hero-h1 {
-    font-size: clamp(36px, 4.5vw, 56px);
+    font-size: clamp(40px, 6vw, 72px);
     font-weight: 800;
     color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 20px;
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
   }
 
   .hero-h1 span {
     background: linear-gradient(135deg, var(--cyan) 0%, var(--blue-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    white-space: nowrap;
   }
 
   .hero-sub {
@@ -1255,7 +1257,7 @@
     
     <!-- LEFT: DASHBOARD IMAGE -->
     <div class="hero-visual fade-up">
-      <img src="assets/images/dashboard-flat.png" alt="SimpliTrain Dashboard" class="hero-dashboard-img">
+      <img src="assets/images/dashboard-isolated.png" alt="SimpliTrain Dashboard" class="hero-dashboard-img">
     </div>
 
     <!-- RIGHT: CONTENT -->
@@ -1271,7 +1273,6 @@
       <div class="hero-ctas fade-up">
         <a href="#final-cta" class="btn-primary">Get Started</a>
         <a href="#features" class="btn-ghost">Schedule a Demo</a>
-        <a href="#" style="color:rgba(255,255,255,0.6); font-size:14px; margin-left:15px; text-decoration:none;">See What You Could Save 📊</a>
       </div>
 
       <div class="hero-trust fade-up">
